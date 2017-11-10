@@ -4,6 +4,8 @@
 
 * [My Awesome API](README.md)
 
-## Methods
+## Classes
 
-* [Defining Methods](methods.md)
+* [AABB](aabb.md)
+* [AngleLockEquation](methods.md)
+
