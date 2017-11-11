@@ -1,30 +1,63 @@
-# Defining Methods
+Angle Lock Equation（角锁方程）用于锁定两个刚体之间的相对角度，这一约束试图将两个向量之间的点积保持为0（[dot product](https://en.wikipedia.org/wiki/Dot_product)）。
 
-Methods allow you to smoothly display code examples in different languages.
+### 构造器
 
-{% method %}
-## My first method
+---
 
-My first method exposes how to print a message in JavaScript and Go.
+接受两个必需参数和一个可选参数，前两个参数为需要限制相对角度的两个Body 对象，函数中为bodyA 和bodyB， 第三个参数是一个对象，包含了angle 和ratio，angle为赋予bodyA 的角度，第二个是变速比。
 
-{% sample lang="js" %}
-Here is how to print a message to `stdout` using JavaScript.
+构造器函数如下：
 
 ```js
-console.log('My first method');
+function AngleLockEquation(bodyA, bodyB, options){
+    options = options || {};
+    Equation.call(this,bodyA,bodyB,-Number.MAX_VALUE,Number.MAX_VALUE);
+    this.angle = options.angle || 0;
+
+    /**
+     * The gear ratio.
+     * @property {Number} ratio
+     * @private
+     * @see setRatio
+     */
+    this.ratio = typeof(options.ratio)==="number" ? options.ratio : 1;
+
+    this.setRatio(this.ratio);
+}
 ```
 
-{% sample lang="go" %}
-Here is how to print a message to `stdout` using Go.
+### 属性
 
-```go
-fmt.Println("My first method")
-```
+---
 
-{% common %}
-Whatever language you are using, the result will be the same.
+* **bodyA**
+* **bodyB**
+* **enabled**
+* **G**
+* **maxForce**
+* **minForce**
+* **multiplier**
+* **needsUpdate**
+* **relativeVelocity**
+* **relaxation**
+* **stiffness**
 
-```bash
-$ My first method
-```
-{% endmethod %}
+### 方法
+
+---
+
+* **addToWlambda**
+* **computeB**
+* **computeGiMf**
+* **computeGiMGt**
+* **computeGq**
+* **computeGW**
+* **computeGWlambda**
+* **computeInvC**
+* **gmult**
+* **setMaxTorque**
+* **setRatio**
+* **update**
+
+
+
