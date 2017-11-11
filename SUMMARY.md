@@ -14,7 +14,7 @@
 
 ## 形状
 
-* Box
+* [Box](xing-zhuang/box.md)
 * Capsule
 * Circle
 * Convex
