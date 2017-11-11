@@ -16,8 +16,8 @@
 
 * [Box](xing-zhuang/box.md)
 * [Capsule](xing-zhuang/capsule.md)
-* Circle
-* Convex
+* [Circle](xing-zhuang/circle.md)
+* [Convex](xing-zhuang/convex.md)
 * Heightfield
 * Line
 * Particle
