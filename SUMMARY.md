@@ -11,7 +11,15 @@
 * [Body](body.md)
 * [Shape](box.md)
 * [Broadphase](broadphase.md)
-* Capsule
 
 ## 形状
+
+* Box
+* Capsule
+* Circle
+* Convex
+* Heightfield
+* Line
+* Particle
+* Plane
 
