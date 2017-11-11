@@ -42,7 +42,7 @@ constructor(options?: {
 * **containsPoint  **:boolean
 
   ```
-  参数为包含**指定的坐标点**的数组 [ x, y ]；
+  参数为包含指定的坐标点的数组 [ x, y ]；
 
   检测指定的点是否在包围盒中；
   ```
