@@ -20,6 +20,6 @@
 * [Convex](xing-zhuang/convex.md)
 * [Heightfield](xing-zhuang/heightfield.md)
 * [Line](xing-zhuang/line.md)
-* Particle
-* Plane
+* [Particle](xing-zhuang/particle.md)
+* [Plane](xing-zhuang/plane.md)
 
