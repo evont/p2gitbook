@@ -15,7 +15,7 @@
 ## 形状
 
 * [Box](xing-zhuang/box.md)
-* Capsule
+* [Capsule](xing-zhuang/capsule.md)
 * Circle
 * Convex
 * Heightfield
