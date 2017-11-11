@@ -18,8 +18,8 @@
 * [Capsule](xing-zhuang/capsule.md)
 * [Circle](xing-zhuang/circle.md)
 * [Convex](xing-zhuang/convex.md)
-* Heightfield
-* Line
+* [Heightfield](xing-zhuang/heightfield.md)
+* [Line](xing-zhuang/line.md)
 * Particle
 * Plane
 
