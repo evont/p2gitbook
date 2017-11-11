@@ -4,12 +4,14 @@
 
 * [导论](README.md)
 
-## Classes
+## 基类
 
 * [AABB](aabb.md)
 * [AngleLockEquation](methods.md)
 * [Body](body.md)
-* [Box](box.md)
+* [Shape](box.md)
 * [Broadphase](broadphase.md)
 * Capsule
+
+## 形状
 
