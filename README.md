@@ -4,3 +4,12 @@
 
 使用p2框架前，你必须懂得基础的物理学概念，比如质量、力、扭力和推力。否则，你只能先上谷歌和维基百科了。由于p2.js是基于javascript语言编写的，显然你还得有js的编程能力。
 
+文档目录
+
+* [AABB](/aabb.md)
+* [AngleLockEquation](/methods.md)
+* [Body](/body.md)
+* [Box](/body.md)
+* 
+
+
