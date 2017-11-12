@@ -80,13 +80,14 @@ function AngleLockEquation(bodyA, bodyB, options){
 
 * **addToWlambda  **:void
 
-添加约束速度到刚体中
-
+  添加约束速度到刚体中
 * **computeB **:Number
+  
+  计算SPOOK 方程的RHS 值（Computes the RHS of the SPOOK equation）
+* **computeGiMf **:Number
 
-
-
-* **computeGiMf**
+    
+  计算 Computes G*inv(M)*f, where M is the mass matrix with diagonal blocks for each body, and f are the forces on the bodies.
 * **computeGiMGt**
 * **computeGq**
 * **computeGW**
