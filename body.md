@@ -29,6 +29,7 @@ constructor(options?: {
 });
 ```
 
+创建刚体的例子如下：
 ```js
 // Create a typical dynamic body
    var body = new Body({
