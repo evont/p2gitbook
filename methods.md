@@ -78,25 +78,53 @@ function AngleLockEquation(bodyA, bodyB, options){
 
 ---
 
-* **addToWlambda  **:void
+* **addToWlambda(deltalambda :Number)  **:void
 
+  参数为△λ(delta lambda)
   添加约束速度到刚体中
-* **computeB **:Number
+* **computeB() **:Number
   
   计算SPOOK 方程的RHS 值（Computes the RHS of the SPOOK equation）
-* **computeGiMf **:Number
-
+* **computeGiMf() **:Number
     
-  计算 Computes G*inv(M)*f, where M is the mass matrix with diagonal blocks for each body, and f are the forces on the bodies.
-* **computeGiMGt**
-* **computeGq**
-* **computeGW**
-* **computeGWlambda**
-* **computeInvC**
-* **gmult**
-* **setMaxTorque**
-* **setRatio**
-* **update**
+  $$G * inv(M) * f$$
+  计算G值乘以 [inv(M)](https://cn.mathworks.com/help/matlab/ref/inv.html?requestedDomain=www.mathworks.com) (M 为每个物体对角线块的质量矩阵) 乘以f (刚体的作用力)
+* **computeGiMGt()  **:Number
+  
+  $$G*inv(M)*G'$$
+  计算G值乘以[inv(M)](https://cn.mathworks.com/help/matlab/ref/inv.html?requestedDomain=www.mathworks.com) (M 为每个物体对角线块的质量矩阵) 乘以G的导数
+* **computeGq()  **:Number
+
+  $$G*q$$
+   计算G值乘以q(q 为广义刚体坐标)
+* **computeGW()  **:Number
+  
+  $$ G*W$$
+  计算G值乘以W(W 为刚体的速度)
+* **computeGWlambda  **:Number
+  
+  $$ G*Wlambda$$
+  计算G值乘以Wlambda (W 为刚体的速度)
+* **computeInvC(eps) **:Number
+  
+  参数为eps，一个极小的正数，用于控制迭代精度；
+  
+  $$ C = G * inv（M）* G'+ eps$$
+  计算SPOOK等式的分母部分：C = G * inv（M）* G'+ eps
+* **gmult  **:Number 
+
+  将雅克比接口乘以相应的位置或速度
+* **setMaxTorque(torque :Number)  **:void
+  
+  参数为torque扭矩，Number 类型
+  设置方程的最大作用力
+* **setRatio **:void
+  
+  设置方程的变速比
+* **update **:void
+
+   根据当前参数计算SPOOK参数.a，.b和.epsilon。 参见[SPOOK笔记](http://www8.cs.umu.se/kurser/5DV058/VT09/lectures/spooknotes.pdf)中的等式9,10和11。
+  
 
 
 
