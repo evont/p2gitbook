@@ -1,6 +1,6 @@
 刚体 \(Body\) 指的是具有质量、位置、速度以及一些用于碰撞的形状的物理对象；
 
-### 构造器
+## 构造器
 
 ---
 
@@ -30,6 +30,7 @@ constructor(options?: {
 ```
 
 创建刚体的例子如下：
+
 ```js
 // Create a typical dynamic body
    var body = new Body({
@@ -39,34 +40,35 @@ constructor(options?: {
                   velocity: [0, 0],
                   angularVelocity: 0
               });
-        
+
 // Add a circular shape to the body
    body.addShape(new Circle({ radius: 1 }));
-        
+
 // Add the body to the world
    world.addBody(body);
 ```
-### 属性
+
+## 属性
 
 ---
 
-* **upperBound**
+* #### **aabb **:AABB
 
-    包围盒的上边界坐标数组，包含x,y 值
+  刚体的包围盒
 
-* **lowerBound**
+* #### **aabbNeedsUpdate **:Boolean
 
-    包围盒的下边界坐标数组，包含x,y 值
+  标志包围盒是否需要更新，使用 [updateAABB\(\)](#updateaabb--void) 进行更新
 
-### 方法
+
+
+## 方法
 
 ---
 
-* **containsPoint  **:boolean
+* #### **updateAABB\(\)  **:void
 
-  参数为包含指定的坐标点的数组 [ x, y ]；
-
-  检测指定的点是否在包围盒中；
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
 * **copy  **:void
 
@@ -94,18 +96,24 @@ constructor(options?: {
 
 * **setFromPoints**
 
-  参数为四个：
-     要设置AABB 对象的新坐标点数组(Points :Array)
-     位移位置数组(Position :Array)
-     要旋转的角度(Angle :Number)
-     加给包围盒的边距(skinSize: Number)
+  参数为四个：  
+     要设置AABB 对象的新坐标点数组\(Points :Array\)  
+     位移位置数组\(Position :Array\)  
+     要旋转的角度\(Angle :Number\)  
+     加给包围盒的边距\(skinSize: Number\)
 
-  在指定位置创建AABB对象并进行位移及旋转，同时拓宽包围盒边距。
-  ```
+  在指定位置创建AABB对象并进行位移及旋转，同时拓宽包围盒边距。  
+  \`\`\`
 
+### 事件
 
+---
 
+* **sleep **
 
+* **sleepy **
+
+* **wakeup **
 
 
 
