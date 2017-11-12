@@ -68,10 +68,10 @@ constructor(options?: {
 * **setFromPoints**
 
   参数为四个：
-     要设置AABB 对象的新坐标点数组(Points :Array)
-     位移位置数组(Position :Array)
-     要旋转的角度(Angle :Number)
-     加给包围盒的边距(skinSize: Number)
+     1. 要设置AABB 对象的新坐标点数组(Points :Array)
+     2. 位移位置数组(Position :Array)
+     3. 要旋转的角度(Angle :Number)
+     4. 加给包围盒的边距(skinSize: Number)
 
   在指定位置创建AABB对象并进行位移及旋转，同时拓宽包围盒边距。
 
