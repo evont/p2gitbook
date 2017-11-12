@@ -132,7 +132,7 @@ constructor(options?: {
   
 * #### **idleTime **:Number
   
-  刚体持续睡眠的事件
+  刚体持续睡眠的时间
 
 
 
