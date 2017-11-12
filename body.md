@@ -55,10 +55,84 @@ constructor(options?: {
 * #### **aabb **:AABB
 
   刚体的包围盒
-
 * #### **aabbNeedsUpdate **:Boolean
 
   标志包围盒是否需要更新，使用 [updateAABB\(\)](#updateaabb--void) 进行更新
+* #### **allowSleep **:Boolean
+
+  如果设置为真，刚体将会自动进入睡眠状态。需要注意的是，你需要在所有事件发生前在世界中启用睡眠。
+  默认为true
+* #### **angle **:Number
+
+  角度
+  这一属性没有限定在标准的0 - 2π 之间，可以设置为任意数字，如果你需要设置它为这一区间的数字，可以用下列函数进行换算；
+  ```js
+    function normalizeAngle(angle){
+        angle = angle % (2*Math.PI);
+        if(angle < 0){
+            angle += (2*Math.PI);
+        }
+        return angle;
+    }
+  ```
+* #### **angularDamping **:Number
+
+  角度阻尼，0 - 1之间的数字，默认为0.1
+* #### **angularForce **:Number
+
+  作用于刚体的角力
+* #### **angularVelocity **:Number
+
+  角速度，每秒转动设定的弧度
+* #### **boundingRadius **:Number
+
+  边界圆半径
+* #### **ccdIterations **:Number
+
+  在连续碰撞检测时遍历碰撞所使用的迭代次数，次数越多将使得连续碰撞检测碰撞的误差变小，但次数越少将提高性能。
+  默认为10；
+* #### **ccdSpeedThreshold **:Number
+
+  如果刚体的速度超过此阈值，连续碰撞检测将被启用。将该值设置为一个负数将完全禁用该刚体的连续碰撞检测；
+  默认为-1；
+
+* #### **collisionResponse **:Boolean
+
+  当与其他刚体碰撞时是否产生碰撞作用力。需要注意的是，碰撞仍会产生，但会被禁用。即：该刚体会穿过其他刚体，但仍然会触发碰撞等事件。
+  
+* #### **damping **:Number
+
+  在速度的方向上作用于刚体的线性阻尼，取值在0 - 1之间；
+  默认为0.1
+  
+* #### **fixedRotation **:Boolean
+
+  若为真，则将固定刚体的旋转
+  
+* #### **fixedX **:Boolean
+
+  若为真，则将固定刚体在X轴上的移动，此时刚体依然可以在Y轴上移动。
+ 
+* #### **fixedY **:Boolean
+
+  若为真，则将固定刚体在Y轴上的移动，此时刚体依然可以在X轴上移动。
+  
+* #### **force **:Array
+  
+  作用于刚体的外力。
+  
+* #### **gravityScale **:Number
+
+  重力比例因子，如果希望刚体忽略重力影响，将其设置为0即可，如果希望刚体反重力，将其设置为-1；
+  默认为1；
+  
+* #### **fixedX **:Number
+
+  若为真，则将固定刚体在X轴上的移动，此时刚体依然可以在Y轴上移动。
+  
+* #### **fixedX **:Number
+
+  若为真，则将固定刚体在X轴上的移动，此时刚体依然可以在Y轴上移动。
 
 
 
