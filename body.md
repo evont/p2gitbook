@@ -134,8 +134,19 @@ constructor(options?: {
   
   刚体持续睡眠的时间
 
-* #### **inertia **
+* #### **inertia **:Number
+  
+  刚体在Z轴上的惯性
 
+* #### ** interpolatedAngle **:Number
+  
+  刚体的插入角度，用于渲染
+
+* #### ** interpolatedPosition **:Number
+
+  刚体的插入位置，用于渲染
+
+* #### ** invInertia **:Number
 
 
 
