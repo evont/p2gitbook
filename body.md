@@ -176,20 +176,16 @@ constructor(options?: {
 
 * #### ** sleepSpeedLimit **:Number
   
-  如果刚体当前的速度（数量速度speed， 非velocity矢量速度）小于这一数值，刚体将被视为需进入睡眠状态
+  如果刚体当前的速度（数量速度speed， 非velocity矢量速度）小于这一数值，刚体将被视为需进入惺忪状态
   默认为0.2
 
 * #### ** sleepState **:Number
   
-  Body.AWAKE, Body.SLEEPY 和 Body.SLEEPING 之一。
-  刚体初始的状态为Body.AWAKE， 如果其当前速度低于 sleepSpeedLimit
-   One of Body.AWAKE, Body.SLEEPY and Body.SLEEPING.
-  The body is initially Body.AWAKE. If its velocity norm is below .sleepSpeedLimit, the sleepState will become Body.SLEEPY. If the body continues to be Body.SLEEPY for .sleepTimeLimit seconds, it will fall asleep (Body.SLEEPY).
-Default: Body.AWAKE
+  Body.AWAKE(唤醒模式), Body.SLEEPY(惺忪状态) 和 Body.SLEEPING(休眠模式) 之一。
+  刚体初始的睡眠状态为Body.AWAKE(唤醒模式), 如果其当前速度低于 [sleepSpeedLimit](#sleepSpeedLimit), 刚体的睡眠状态将变为Body.SLEEPY(惺忪状态)， 如果刚体保持Body.SLEEPY(惺忪状态) [sleepTimeLimit](#sleepTimeLimit) 秒将进入Body.SLEEPING(休眠模式)
   默认为Body.AWAKE
 
-
-* #### ** mass **:Number
+* #### ** sleepTimeLimit **:Number
   
   质量
 
