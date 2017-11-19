@@ -136,18 +136,85 @@ constructor(options?: {
 
 * #### **inertia **:Number
   
-  刚体在Z轴上的惯性
+  刚体围绕Z轴上的惯性
 
 * #### ** interpolatedAngle **:Number
   
   刚体的插入角度，用于渲染
 
-* #### ** interpolatedPosition **:Number
+* #### ** interpolatedPosition **:Array
 
   刚体的插入位置，用于渲染
 
 * #### ** invInertia **:Number
 
+  反惯性
+  
+* #### ** invMass **:Number
+  
+  反重力
+
+* #### ** mass **:Number
+  
+  质量
+  
+* #### ** position **:Array
+  
+  位置
+
+* #### ** previousAngle **:Number
+  
+  刚体的前一角度
+
+* #### ** previousPosition **:Array
+  
+  刚体的前一位置
+
+* #### ** shapes **:Array
+  
+  刚体的形状，可以多个
+
+* #### ** sleepSpeedLimit **:Number
+  
+  如果刚体当前的速度（数量速度speed， 非velocity矢量速度）小于这一数值，刚体将被视为需进入睡眠状态
+  默认为0.2
+
+* #### ** sleepState **:Number
+  
+  Body.AWAKE, Body.SLEEPY 和 Body.SLEEPING 之一。
+  刚体初始的状态为Body.AWAKE， 如果其当前速度低于 sleepSpeedLimit
+   One of Body.AWAKE, Body.SLEEPY and Body.SLEEPING.
+  The body is initially Body.AWAKE. If its velocity norm is below .sleepSpeedLimit, the sleepState will become Body.SLEEPY. If the body continues to be Body.SLEEPY for .sleepTimeLimit seconds, it will fall asleep (Body.SLEEPY).
+Default: Body.AWAKE
+  默认为Body.AWAKE
+
+
+* #### ** mass **:Number
+  
+  质量
+
+* #### ** mass **:Number
+  
+  质量
+
+* #### ** mass **:Number
+  
+  质量
+
+* #### ** mass **:Number
+  
+  质量
+
+* #### ** mass **:Number
+  
+  质量
+
+* #### ** mass **:Number
+  
+  质量
+
+
+## 静态属性
 
 
 
