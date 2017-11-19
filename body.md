@@ -134,6 +134,10 @@ constructor(options?: {
   
   刚体持续睡眠的时间
 
+* #### **inertia **
+
+
+
 
 
 ## 方法
@@ -178,7 +182,7 @@ constructor(options?: {
 
   在指定位置创建AABB对象并进行位移及旋转，同时拓宽包围盒边距。  
 
-* **inertia**
+
 
 
 ### 事件
