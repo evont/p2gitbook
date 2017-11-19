@@ -217,19 +217,19 @@ constructor(options?: {
                     });
 ```
  
-* #### ** mass **:Number
+* #### ** velocity **:Array
+  
+  当前速度
+
+* #### ** vlambda **:Array
   
   质量
 
-* #### ** mass **:Number
+* #### ** wlambda **:Array
   
   质量
 
-* #### ** mass **:Number
-  
-  质量
-
-* #### ** mass **:Number
+* #### ** world **:World
   
   质量
 
