@@ -107,7 +107,7 @@ function AngleLockEquation(bodyA, bodyB, options){
   $$ G*W$$  
   计算G值乘以W\(W 为刚体的速度\)
 
-* #### **computeGWlambda  **:Number
+* #### **computeGWlambda()  **:Number
 
   $$ G*Wlambda$$  
   计算G值乘以Wlambda \(W 为刚体的速度\)
@@ -119,7 +119,7 @@ function AngleLockEquation(bodyA, bodyB, options){
   $$ C = G * inv（M）* G'+ eps$$  
   计算SPOOK等式的分母部分：C = G _ inv（M）_ G'+ eps
 
-* #### **gmult  **:Number
+* #### **gmult()  **:Number
 
   将雅克比接口乘以相应的位置或速度
 
@@ -128,11 +128,13 @@ function AngleLockEquation(bodyA, bodyB, options){
   参数为torque扭矩，Number 类型  
   设置方程的最大作用力
 
-* #### **setRatio **:void
+* #### **setRatio(ratio :Number) **:void
+
+  参数为ratio，变速比；
 
   设置方程的变速比
 
-* #### **update **:void
+* #### **update() **:void
 
   根据当前参数计算SPOOK参数.a，.b和.epsilon。 参见[SPOOK笔记](http://www8.cs.umu.se/kurser/5DV058/VT09/lectures/spooknotes.pdf)中的等式9,10和11。
 

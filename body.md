@@ -223,24 +223,74 @@ constructor(options?: {
 
 * #### ** vlambda **:Array
   
-  质量
+  在世界最后一次步进(step)中添加到刚体的约束速度。
 
 * #### ** wlambda **:Array
   
-  质量
+  在世界最后一次步进(step)中添加到刚体的角约束速度。
 
 * #### ** world **:World
   
-  质量
-
-
-## 静态属性
-
+  刚体进入的物理世界，当设置为Null 时，意味着刚体未进入如何物理世界
 
 
 ## 方法
 
 ---
+
+* #### **addShape(shape :Shape, [offset :Array], [angle :Number])  **:void
+
+  参数为一个必需参数和两个可选参数：
+    1. Shape 将依附到刚体上的形状，必需
+    2. offset 形状的局部偏移，可选
+    3. angle 形状的局部角度，可选
+      
+  将一个形状依附到这个刚体上，可以在添加形状时传入一个局部变换值，使得形状拥有相对刚体重心的位置和角度。这将自动更新刚体的属性和包围半径
+  
+  示例：
+  ```js
+  var body = new Body(),
+      shape = new Circle({ radius: 1 });
+
+  // 将形状置于刚体中间
+  body.addShape(shape);
+
+  // 添加另一个形状, 将其放置于距离刚体重心X轴方向1单位的位置
+  body.addShape(shape,[1,0]);
+
+  // 添加另一个形状, 将其放置于距离刚体重心Y轴方向1单位的位置，同时将其旋转90度(逆时针方向)
+  body.addShape(shape,[0,1],Math.PI/2);
+  ```
+  
+* #### **adjustCenterOfMass\(\)  **:void
+
+  调整形状的偏移量，使得其中心变成刚体的重心。
+
+* #### **applyDamping\(dt :Number\)  **:void
+  
+  参数为当前时间戳
+  施加阻尼
+
+* #### **applyForce\(force :Array,[relativePoint :Array]\)  **:void
+   
+  参数为一个必需参数和一个可选参数：
+    1. force 施加在刚体上的力，必需
+    2. relativePoint 相对重心的施力点，可选
+    
+  在相对刚体重心的一个点施加作用力， 这个点可以是刚体表面上的任意一点， 这种情况下施加作用力将影响刚体的force 作用力和angularForce 角速度，如果这一点为0， 这一作用力将直接施加在刚体重心，产生的扭矩将为0
+
+* #### **updateAABB\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+
+* #### **updateAABB\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+
+* #### **updateAABB\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+
 
 * #### **updateAABB\(\)  **:void
 
