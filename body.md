@@ -211,11 +211,10 @@ constructor(options?: {
  ```
  
  ```js
-// 将刚体的质量设置为非零数值时，它将变成能够运动及与其他刚体进行交互的动力学模型
-var dynamicBody = new Body({
-mass : 1
-});
-console.log(dynamicBody.type == Body.DYNAMIC); // true
+// 运动学模型刚体仅在改变其矢量速度时发生移动
+ var kinematicBody = new Body({
+                    type: Body.KINEMATIC
+                    });
 ```
  
 * #### ** mass **:Number
