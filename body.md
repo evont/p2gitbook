@@ -187,12 +187,37 @@ constructor(options?: {
 
 * #### ** sleepTimeLimit **:Number
   
-  质量
+  如果刚体保持Body.SLEEPY(惺忪状态)超出这一限制时间将进入休眠。
+  默认为1
 
-* #### ** mass **:Number
+* #### ** type **:Number
   
-  质量
-
+  Body.STATIC（静力学模型）, Body.DYNAMIC（动力学模型） 和 Body.KINEMATIC（运动学模型） 之一
+  刚体的运动类型， STATIC 刚体不可移动，也不受作用力和碰撞影响， DYNAMIC 刚体将根据碰撞和作用力运动，KINEMATIC 刚体根据其velocity 属性移动，也不受作用力和碰撞影响。
+  
+ 示例：
+ ```js
+ // 刚体默认为静力学模型，静力学模型刚体永远不移动
+     var body = new Body();
+     console.log(body.type == Body.STATIC); // true
+ ```
+  
+ ```js
+ // 将刚体的质量设置为非零数值时，它将变成能够运动及与其他刚体进行交互的动力学模型
+   var dynamicBody = new Body({
+                        mass : 1
+                    });
+   console.log(dynamicBody.type == Body.DYNAMIC); // true
+ ```
+ 
+ ```js
+// 将刚体的质量设置为非零数值时，它将变成能够运动及与其他刚体进行交互的动力学模型
+var dynamicBody = new Body({
+mass : 1
+});
+console.log(dynamicBody.type == Body.DYNAMIC); // true
+```
+ 
 * #### ** mass **:Number
   
   质量
