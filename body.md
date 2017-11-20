@@ -284,8 +284,65 @@ constructor(options?: {
   参数为一个必需参数和一个可选参数：
     1. localForce 施加在刚体所在物理空间的向量力，必需
     2. localPoint 刚体所在的物理世界中的一个关联点，如果不给出，它将被设置为零，所有的冲量将施加到刚体重心，可选
+    
   对物体所在位置施加一个作用力
 
+* #### **applyImpulse\(impulse :Array, [relativePoint :Array]\)  **:void
+  
+  参数为一个必需参数和一个可选参数：
+    1. impulse 施加在刚体所在物理空间的冲量，必需
+    2. relativePoint 刚体所在的物理世界中的一个关联点，如果不给出，它将被设置为零，所有的冲量将施加到刚体重心，可选
+    
+  在相对刚体的某一点上施加一个冲量(冲量是一个短时间内加到刚体上的力，冲量= 力 * 时间)，这个点可以是刚体表面上的任意一点。冲量将影响刚体的velocity 速度和angularVelocity 角速度
+
+* #### **applyImpulseLocal\(\)  **:void
+
+  参数为一个必需参数和一个可选参数：
+    1. impulse 施加在刚体所在物理空间的冲量，必需
+    2. relativePoint 刚体所在的物理世界中的一个关联点，如果不给出，它将被设置为零，所有的冲量将施加到刚体重心，可选
+    
+  在相对刚体的某一点上施加一个冲量(冲量是一个短时间内加到刚体上的力，冲量= 力 * 时间)，这个点可以是刚体表面上的任意一点。冲量将影响刚体的velocity 速度和angularVelocity 角速度
+
+* #### **emit\(event\)  **:EventEmitter
+
+  参数为需要触发的事件
+
+  触发一个事件，并返回自身，用于链式调用
+
+* #### **fromPolygon\(path :Array, [Options :Object]\)  **:Boolean
+
+  参数为一个装满类似[0,0],[0,1]的位置点的数组，必需；
+  第二个是一个可选的配置项，里面包括：
+    1. optimalDecomp 是否开启最优分解，当顶点大于10个时性能将下降默认为false，可选
+    2. skipSimpleCheck 如果你已经知道路径不会相交，将其设置为true，跳过检查
+    3. removeCollinearPoints 设置为一个数字（角度阈值）去除共线点，或false保持所有点。
+    
+  读取一个多边形路路径，转化为凸型并将其放置在适当的偏移点上。
+  
+  如果成功则返回true，否则为false
+
+* #### **getAABB\(\)  **:AABB
+
+  返回从刚体中的AABB实例，如果必要这个AABB 将会被更新；
+
+* #### **getArea\(\)  **:Number 
+
+  返回刚体所包含的形状总面积
+
+* #### **getVelocityAtPoint\(result :Array, relativePoint :Array\)  **:Array
+
+  参数为一个放置结果的向量数组，一个面向世界的向量，需要得到速度信息的点的位置。
+  
+  返回刚体上一个点的速度
+
+* #### **has\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+
+* #### **updateAABB\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+
 * #### **updateAABB\(\)  **:void
 
   更新刚体的包围盒，并设置aabbNeedsUpdate 为false
@@ -294,44 +351,43 @@ constructor(options?: {
 
   更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
+* #### **updateAABB\(\)  **:void
+
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
 * #### **updateAABB\(\)  **:void
 
   更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-* **copy  **:void
+* #### **updateAABB\(\)  **:void
 
-  参数为一个AABB 类型对象
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-  将指定的AABB 对象复制到当前对象中
+* #### **updateAABB\(\)  **:void
 
-* **extend  **:void
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-  参数为一个AABB 类型对象
+* #### **updateAABB\(\)  **:void
 
-  继承指定的AABB 对象，使得当前对象覆盖对应的AABB 对象
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-* **overlaps  **:boolean
+* #### **updateAABB\(\)  **:void
 
-  参数为一个AABB 类型对象
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-  检测当前AABB 对象是否覆盖指定的AABB 对象
+* #### **updateAABB\(\)  **:void
 
-* **overlapsRay  **:number
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-  参数为一个Ray 对象
+* #### **updateAABB\(\)  **:void
 
-  检测当前AABB 对象是否被指定的Ray 对象击中，如果没有击中则返回 -1，如果击中则返回 0 - 1 之间的一个数；
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-* **setFromPoints**
+* #### **updateAABB\(\)  **:void
 
-  参数为四个：  
-     要设置AABB 对象的新坐标点数组\(Points :Array\)  
-     位移位置数组\(Position :Array\)  
-     要旋转的角度\(Angle :Number\)  
-     加给包围盒的边距\(skinSize: Number\)
+  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
 
-  在指定位置创建AABB对象并进行位移及旋转，同时拓宽包围盒边距。  
+
 
 
 
