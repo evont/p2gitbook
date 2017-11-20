@@ -279,9 +279,12 @@ constructor(options?: {
     
   在相对刚体重心的一个点施加作用力， 这个点可以是刚体表面上的任意一点， 这种情况下施加作用力将影响刚体的force 作用力和angularForce 角速度，如果这一点为0， 这一作用力将直接施加在刚体重心，产生的扭矩将为0
 
-* #### **updateAABB\(\)  **:void
-
-  更新刚体的包围盒，并设置aabbNeedsUpdate 为false
+* #### **applyForceLocal\(localForce :Array,[localPoint :Array]\)  **:void
+  
+  参数为一个必需参数和一个可选参数：
+    1. localForce 施加在刚体所在物理空间的向量力，必需
+    2. localPoint 刚体所在的物理世界中的一个关联点，如果不给出，它将被设置为零，所有的冲量将施加到刚体重心，可选
+  对物体所在位置施加一个作用力
 
 * #### **updateAABB\(\)  **:void
 
