@@ -7,12 +7,19 @@
 ## 基类
 
 * [AABB](aabb.md)
-* [AngleLockEquation](methods.md)
 * [Body](body.md)
 * [Shape](box.md)
 * [Broadphase](broadphase.md)
+* Equation（约束方程）
+* Solver（求解器）
 
-## 形状
+## 刚体（Body）
+
+## Equation（约束方程）
+
+* [AngleLockEquation](methods.md)
+
+## 形状（Shape）
 
 * [Box](xing-zhuang/box.md)
 * [Capsule](xing-zhuang/capsule.md)
